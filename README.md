@@ -635,10 +635,10 @@ client.watch("foo", function(watchError) {
       .set("foo", "bar")
       .exec(function(execError, results) {
         /**
-         * If err is null, it means Redis successfully attempted
+         * If execError is null, it means Redis successfully attempted
          * the operation.
          */
-        if (execError) throw err;
+        if (execError) throw execError;
 
         /**
          * If results === null, it means that a concurrent client
